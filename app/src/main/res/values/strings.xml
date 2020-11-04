@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">UI</string>
+    <string name="app_header_name">Maps</string>
+    <string name="app_dev_name">Google Inc.</string>
+    <string name="app_three_plus">3+</string>
+    <string name="button_uninstall">Uninstall</string>
+    <string name="button_open">Open</string>
+    <string name="sample_downloads">1</string>
+    <string name="downloads">Downloads</string>
+    <string name="sample_rating">4.3</string>
+    <string name="sample_users">5,493,032</string>
+    <string name="sample_travel"><![CDATA[Travel & Local]]></string>
+    <string name="sample_similar">Similar</string>
+    <string name="app_desc">Get the latest Google Maps App.</string>
+    <string name="read_more">Read More</string>
+    <string name="search">Search</string>
+    <string name="dots">Dots</string>
+    <string name="app_news">"WHAT\'S NEW &#13; &#8226; Easily find hours and phone numbers for large department stores with the new department store directory in Google Maps. (US only)"</string>
+    <string name="three_dots">Three Dots</string>
+</resources>

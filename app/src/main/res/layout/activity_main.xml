@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.7" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:id="@+id/iv_app_image"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_maps" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_app_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toEndOf="@+id/iv_app_image"
+                        android:layout_toRightOf="@+id/iv_app_image"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_app_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_header_name"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_app_developer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_dev_name"
+                            android:textSize="14sp"
+                            app:drawableEndCompat="@drawable/bg_desc" />
+
+                        <TextView
+                            android:id="@+id/tv_app_3_plus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginBottom="2dp"
+                            android:background="@drawable/bg_black_rect"
+                            android:paddingStart="2dp"
+                            android:paddingTop="1dp"
+                            android:paddingEnd="2dp"
+                            android:paddingBottom="1dp"
+                            android:text="@string/app_three_plus"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_open_app"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_uninstall"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_outline"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/button_uninstall"
+                        android:theme="@style/AppTheme.UninstallButton" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_open"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingStart="30dp"
+                        android:paddingEnd="30dp"
+                        android:stateListAnimator="@null"
+                        android:text="@string/button_open"
+                        android:theme="@style/AppTheme.GreenButton" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorGrey" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="65dp"
+                        android:layout_height="85dp"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/badge_downloads"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp">
+
+                            <TextView
+                                android:id="@+id/tv_badge_billion"
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:background="@drawable/ic_billion"
+                                android:gravity="center"
+                                android:paddingBottom="8dp"
+                                android:text="@string/sample_downloads"
+                                android:textColor="@color/colorDarkGrey"
+                                android:textSize="25sp" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_app_downloads_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="@string/downloads"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="65dp"
+                        android:layout_height="85dp"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/badge_users"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp">
+
+                            <TextView
+                                android:id="@+id/tv_badge_users_number"
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:background="@drawable/ic_rating"
+                                android:gravity="center"
+                                android:paddingBottom="8dp"
+                                android:text="@string/sample_rating"
+                                android:textColor="@color/white"
+                                android:textSize="24sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="14dp"
+                                android:layout_marginEnd="14dp"
+                                android:layout_marginBottom="14dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:src="@drawable/ic_star" />
+
+                                <ImageView
+                                    android:layout_width="8dp"
+                                    android:layout_height="8dp"
+                                    android:src="@drawable/ic_star" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/tv_app_users_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="@string/sample_users"
+                            android:textSize="12sp"
+                            app:drawableEndCompat="@drawable/bg_person" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="65dp"
+                        android:layout_height="85dp"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/badge_travel"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp">
+
+                            <ImageView
+                                android:id="@+id/travel"
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:background="@drawable/ic_travel"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:textSize="24sp" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_app_travel_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="@string/sample_travel"
+                            android:textSize="10sp"
+                            tools:ignore="SmallSp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="65dp"
+                        android:layout_height="85dp"
+                        android:layout_margin="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/badge_similar"
+                            android:layout_width="match_parent"
+                            android:layout_height="65dp">
+
+                            <ImageView
+                                android:id="@+id/similar"
+                                android:layout_width="65dp"
+                                android:layout_height="65dp"
+                                android:background="@drawable/ic_similar"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:textSize="24sp" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/tv_app_similar_label"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:text="@string/sample_similar"
+                            android:textSize="12sp" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="2dp"
+                    android:background="@color/colorGrey" />
+
+                <TextView
+                    android:id="@+id/tv_app_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/app_desc"
+                    android:textAlignment="center"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorLightPrimary"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:src="@drawable/ic_loading" />
+
+                    <TextView
+                        android:id="@+id/tv_app_news"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="@string/app_news"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16sp"
+                        tools:ignore="RtlCompat" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/watch_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_watch" />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:padding="10dp"
+                    android:text="@string/read_more"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_app_screenshots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

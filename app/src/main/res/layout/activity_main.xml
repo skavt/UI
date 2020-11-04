@@ -327,9 +327,9 @@
                     android:id="@+id/tv_app_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="20dp"
                     android:gravity="center_horizontal"
-                    android:padding="10dp"
+                    android:padding="15dp"
                     android:text="@string/app_desc"
                     android:textAlignment="center"
                     android:textSize="16sp" />
@@ -351,6 +351,7 @@
                         android:id="@+id/tv_app_news"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
                         android:layout_marginBottom="15dp"
                         android:gravity="center_horizontal"
                         android:padding="10dp"
@@ -366,7 +367,7 @@
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:layout_margin="10dp"
+                    android:layout_margin="20dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ic_watch" />
 
@@ -374,9 +375,10 @@
                     android:id="@+id/more"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center_horizontal"
-                    android:padding="10dp"
                     android:text="@string/read_more"
+                    android:textAllCaps="true"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp" />
 

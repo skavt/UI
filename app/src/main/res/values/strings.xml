@@ -2,7 +2,7 @@
     <string name="app_name">UI</string>
     <string name="app_header_name">Maps</string>
     <string name="app_dev_name">Google Inc.</string>
-    <string name="app_three_plus">3+</string>
+    <string name="app_plus">3+</string>
     <string name="button_uninstall">Uninstall</string>
     <string name="button_open">Open</string>
     <string name="sample_downloads">1</string>

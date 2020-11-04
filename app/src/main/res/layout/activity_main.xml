@@ -18,7 +18,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
-                android:id="@+id/background"
+                android:id="@+id/background_image"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
@@ -59,7 +59,7 @@
                     android:layout_marginBottom="12dp">
 
                     <ImageView
-                        android:id="@+id/iv_app_image"
+                        android:id="@+id/app_image"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
                         android:scaleType="centerCrop"
@@ -71,12 +71,12 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginLeft="16dp"
-                        android:layout_toEndOf="@+id/iv_app_image"
-                        android:layout_toRightOf="@+id/iv_app_image"
+                        android:layout_toEndOf="@+id/app_image"
+                        android:layout_toRightOf="@+id/app_image"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/tv_app_name"
+                            android:id="@+id/app_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/app_header_name"
@@ -84,7 +84,7 @@
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/tv_app_developer"
+                            android:id="@+id/app_developer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/app_dev_name"
@@ -92,7 +92,7 @@
                             app:drawableEndCompat="@drawable/bg_desc" />
 
                         <TextView
-                            android:id="@+id/tv_app_3_plus"
+                            android:id="@+id/app_plus"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
@@ -102,15 +102,16 @@
                             android:paddingTop="1dp"
                             android:paddingEnd="2dp"
                             android:paddingBottom="1dp"
-                            android:text="@string/app_three_plus"
+                            android:text="@string/app_plus"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
                 </RelativeLayout>
 
                 <LinearLayout
-                    android:id="@+id/ll_open_app"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -124,7 +125,6 @@
                         android:background="@drawable/bg_btn_outline"
                         android:paddingStart="30dp"
                         android:paddingEnd="30dp"
-                        android:stateListAnimator="@null"
                         android:text="@string/button_uninstall"
                         android:theme="@style/AppTheme.UninstallButton" />
 
@@ -135,9 +135,9 @@
                         android:layout_weight="1"
                         android:paddingStart="30dp"
                         android:paddingEnd="30dp"
-                        android:stateListAnimator="@null"
                         android:text="@string/button_open"
                         android:theme="@style/AppTheme.GreenButton" />
+
                 </LinearLayout>
 
                 <View
@@ -159,12 +159,11 @@
                         android:layout_margin="10dp">
 
                         <RelativeLayout
-                            android:id="@+id/badge_downloads"
                             android:layout_width="match_parent"
                             android:layout_height="65dp">
 
                             <TextView
-                                android:id="@+id/tv_badge_billion"
+                                android:id="@+id/billion_label"
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
                                 android:background="@drawable/ic_billion"
@@ -176,13 +175,14 @@
                         </RelativeLayout>
 
                         <TextView
-                            android:id="@+id/tv_app_downloads_label"
+                            android:id="@+id/downloads_label"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:gravity="center"
                             android:text="@string/downloads"
                             android:textSize="12sp" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -191,12 +191,11 @@
                         android:layout_margin="10dp">
 
                         <RelativeLayout
-                            android:id="@+id/badge_users"
                             android:layout_width="match_parent"
                             android:layout_height="65dp">
 
                             <TextView
-                                android:id="@+id/tv_badge_users_number"
+                                android:id="@+id/users_number"
                                 android:layout_width="65dp"
                                 android:layout_height="65dp"
                                 android:background="@drawable/ic_rating"
@@ -239,13 +238,15 @@
                                 <ImageView
                                     android:layout_width="8dp"
                                     android:layout_height="8dp"
-                                    android:src="@drawable/ic_star" />
+                                    android:src="@drawable/ic_star_half" />
+
                             </LinearLayout>
+
                         </RelativeLayout>
 
 
                         <TextView
-                            android:id="@+id/tv_app_users_label"
+                            android:id="@+id/users_label"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
@@ -253,6 +254,7 @@
                             android:text="@string/sample_users"
                             android:textSize="12sp"
                             app:drawableEndCompat="@drawable/bg_person" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -261,7 +263,6 @@
                         android:layout_margin="10dp">
 
                         <RelativeLayout
-                            android:id="@+id/badge_travel"
                             android:layout_width="match_parent"
                             android:layout_height="65dp">
 
@@ -273,10 +274,11 @@
                                 android:gravity="center"
                                 android:padding="15dp"
                                 android:textSize="24sp" />
+
                         </RelativeLayout>
 
                         <TextView
-                            android:id="@+id/tv_app_travel_label"
+                            android:id="@+id/travel_label"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
@@ -284,6 +286,7 @@
                             android:text="@string/sample_travel"
                             android:textSize="10sp"
                             tools:ignore="SmallSp" />
+
                     </RelativeLayout>
 
                     <RelativeLayout
@@ -292,7 +295,6 @@
                         android:layout_margin="10dp">
 
                         <RelativeLayout
-                            android:id="@+id/badge_similar"
                             android:layout_width="match_parent"
                             android:layout_height="65dp">
 
@@ -304,17 +306,20 @@
                                 android:gravity="center"
                                 android:padding="15dp"
                                 android:textSize="24sp" />
+
                         </RelativeLayout>
 
                         <TextView
-                            android:id="@+id/tv_app_similar_label"
+                            android:id="@+id/similar_label"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_alignParentBottom="true"
                             android:gravity="center"
                             android:text="@string/sample_similar"
                             android:textSize="12sp" />
+
                     </RelativeLayout>
+
                 </LinearLayout>
 
                 <View
@@ -324,7 +329,7 @@
                     android:background="@color/colorGrey" />
 
                 <TextView
-                    android:id="@+id/tv_app_description"
+                    android:id="@+id/app_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
@@ -338,7 +343,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/colorLightPrimary"
-
                     android:orientation="horizontal">
 
                     <ImageView
@@ -348,7 +352,7 @@
                         android:src="@drawable/ic_loading" />
 
                     <TextView
-                        android:id="@+id/tv_app_news"
+                        android:id="@+id/app_news"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="10dp"
@@ -360,6 +364,7 @@
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"
                         tools:ignore="RtlCompat" />
+
                 </LinearLayout>
 
                 <ImageView

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -35,29 +34,20 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         // Horizontal scrollable images
-        val horizontalLayoutManager: RecyclerView.LayoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-        images.layoutManager = horizontalLayoutManager
-        images.setHasFixedSize(true)
-        loadImagesAndSetAdapter()
+        images.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        images.adapter = AppImagesAdapter(ArrayList<String>().apply {
+            add("sc_1")
+            add("sc_2")
+            add("sc_3")
+            add("sc_4")
+            add("sc_5")
+            add("sc_6")
+        }, this)
 
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
-    }
-
-    private fun loadImagesAndSetAdapter() {
-        val imageList = ArrayList<String>()
-        imageList.add("sc_1")
-        imageList.add("sc_2")
-        imageList.add("sc_3")
-        imageList.add("sc_4")
-        imageList.add("sc_5")
-        imageList.add("sc_6")
-
-        images.adapter = AppImagesAdapter(imageList, this)
     }
 }

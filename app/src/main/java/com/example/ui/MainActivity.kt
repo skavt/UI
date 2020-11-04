@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Snackbar messages
         btn_uninstall.setOnClickListener {
             Snackbar.make(btn_uninstall, R.string.button_uninstall, Snackbar.LENGTH_SHORT).show()
         }
@@ -29,16 +29,18 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(travel, R.string.sample_travel, Snackbar.LENGTH_SHORT).show()
         }
 
+        // Toolbar back arrow
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.title = ""
         setSupportActionBar(toolbar)
 
+        // Horizontal scrollable images
         val horizontalLayoutManager: RecyclerView.LayoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
-        rv_app_screenshots.layoutManager = horizontalLayoutManager
-        rv_app_screenshots.setHasFixedSize(true)
-        loadScreenshotsDataAndSetAdapter()
+        images.layoutManager = horizontalLayoutManager
+        images.setHasFixedSize(true)
+        loadImagesAndSetAdapter()
 
     }
 
@@ -47,15 +49,15 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    private fun loadScreenshotsDataAndSetAdapter() {
-        val screenshotImages = ArrayList<String>()
-        screenshotImages.add("sc_1")
-        screenshotImages.add("sc_2")
-        screenshotImages.add("sc_3")
-        screenshotImages.add("sc_4")
-        screenshotImages.add("sc_5")
-        screenshotImages.add("sc_6")
+    private fun loadImagesAndSetAdapter() {
+        val imageList = ArrayList<String>()
+        imageList.add("sc_1")
+        imageList.add("sc_2")
+        imageList.add("sc_3")
+        imageList.add("sc_4")
+        imageList.add("sc_5")
+        imageList.add("sc_6")
 
-        rv_app_screenshots.adapter = AppScreenshotsAdapter(screenshotImages, this)
+        images.adapter = AppImagesAdapter(imageList, this)
     }
 }
